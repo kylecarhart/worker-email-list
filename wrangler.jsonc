@@ -2,7 +2,15 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "worker-email-list",
   "main": "src/index.ts",
-  "compatibility_date": "2025-02-03"
+  "compatibility_date": "2025-02-03",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "prod-email-list",
+      "database_id": "c450c378-4d29-44c7-8202-691ef170f996",
+      "migrations_dir": "drizzle"
+    }
+  ]
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
@@ -19,13 +27,6 @@
   //   {
   //     "binding": "MY_BUCKET",
   //     "bucket_name": "my-bucket"
-  //   }
-  // ],
-  // "d1_databases": [
-  //   {
-  //     "binding": "MY_DB",
-  //     "database_name": "my-database",
-  //     "database_id": ""
   //   }
   // ],
   // "ai": {

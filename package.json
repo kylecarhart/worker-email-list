@@ -2,13 +2,22 @@
   "name": "worker-email-list",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify"
+    "deploy": "wrangler deploy --minify",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:apply": "npx wrangler d1 migrations apply prod-email-list --remote"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.39.1",
     "hono": "^4.6.20"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250109.0",
+    "@types/node": "^22.13.0",
+    "drizzle-kit": "^0.30.4",
+    "tsx": "^4.19.2",
     "wrangler": "^3.101.0"
   }
 }
