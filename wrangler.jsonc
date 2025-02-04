@@ -10,10 +10,8 @@
       "database_id": "c450c378-4d29-44c7-8202-691ef170f996",
       "migrations_dir": "drizzle"
     }
-  ]
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
+  ],
+  "compatibility_flags": ["nodejs_compat"]
   // "vars": {
   //   "MY_VAR": "my-variable"
   // },

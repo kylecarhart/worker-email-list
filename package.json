@@ -4,14 +4,17 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
+    "db:migrate-prod": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:apply": "npx wrangler d1 migrations apply prod-email-list --remote"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.4.2",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.39.1",
-    "hono": "^4.6.20"
+    "drizzle-zod": "^0.7.0",
+    "hono": "^4.6.20",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250109.0",

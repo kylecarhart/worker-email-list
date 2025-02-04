@@ -1,3 +1,5 @@
+import { MyD1Database } from "./db";
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -9,6 +11,14 @@ declare global {
   }
 }
 
-export interface Env {
+export type Bindings = {
   DB: D1Database;
-}
+};
+
+export type Variables = {
+  db: MyD1Database;
+};
+
+export type ErrorResponse = {
+  error: string;
+};
