@@ -10,10 +10,12 @@ const app = new Hono<{ Bindings: Bindings; Variables: Variables }>();
 app.use(contextStorage());
 app.use(dbMiddleware);
 
-app.route("/emails", emailRouter);
-
+// Health check
 app.get("/", (c) => {
-  return c.text("Hello Hono!");
+  return c.text("Healthy");
 });
+
+// Email routes
+app.route("/emails", emailRouter);
 
 export default app;
