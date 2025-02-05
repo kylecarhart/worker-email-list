@@ -23,16 +23,15 @@ emailRouter.post(
 
     try {
       await addEmail(email);
-      c.status(200);
+      c.status(204);
       return c.body(null);
     } catch (error: any) {
       if (error.message === "Email already exists") {
         console.log(`Email ${email} already exists`);
-        c.status(200);
+        c.status(204);
         return c.body(null);
       }
-      console.log(error.message);
-      return c.json<ErrorResponse>({ error: "Internal server error" }, 500);
+      throw error;
     }
   }
 );
