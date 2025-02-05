@@ -11,6 +11,9 @@ declare global {
   }
 }
 
+/**
+ * Wrangler bindings
+ */
 export type Bindings = {
   DB: D1Database;
   RATE_LIMITER: {
@@ -19,8 +22,19 @@ export type Bindings = {
   ENVIRONMENT: "dev" | "prod";
 };
 
+/**
+ * Hono context variables
+ */
 export type Variables = {
   db: MyD1Database;
+};
+
+/**
+ * Hono environment
+ */
+export type Env = {
+  Bindings: Bindings;
+  Variables: Variables;
 };
 
 export type ErrorResponse = {

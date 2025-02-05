@@ -3,9 +3,9 @@ import { Hono } from "hono";
 import { rateLimitMiddleware } from "../middleware/rate-limit.middleware";
 import { emailInsertSchema } from "../models/email.model";
 import { addEmail, unsubscribeEmail } from "../services/email.service";
-import type { Bindings, ErrorResponse, Variables } from "../types";
+import type { Env, ErrorResponse } from "../types";
 
-const emailRouter = new Hono<{ Bindings: Bindings; Variables: Variables }>();
+const emailRouter = new Hono<Env>();
 
 /**
  * Add email to database

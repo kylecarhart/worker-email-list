@@ -19,6 +19,19 @@
     "enabled": true,
     "head_sampling_rate": 1
   },
+  "unsafe": {
+    "bindings": [
+      {
+        "name": "RATE_LIMITER",
+        "type": "ratelimit",
+        "namespace_id": "1001",
+        "simple": {
+          "limit": 5,
+          "period": 60
+        }
+      }
+    ]
+  },
   "env": {
     "prod": {
       "vars": {
@@ -31,20 +44,7 @@
           "database_id": "ec0b4a2d-f1ee-4829-992d-b3d7341b506d",
           "migrations_dir": "drizzle"
         }
-      ],
-      "unsafe": {
-        "bindings": [
-          {
-            "name": "RATE_LIMITER",
-            "type": "ratelimit",
-            "namespace_id": "1001",
-            "simple": {
-              "limit": 5,
-              "period": 60
-            }
-          }
-        ]
-      }
+      ]
     }
   }
 }

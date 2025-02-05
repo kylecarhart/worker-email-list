@@ -1,7 +1,7 @@
 import { getContext } from "hono/context-storage";
 import { createMiddleware } from "hono/factory";
 import { initDb } from "../db";
-import type { Bindings, Variables } from "../types";
+import type { Env } from "../types";
 
 // Set up context storage middleware
 export const dbMiddleware = () =>
@@ -12,6 +12,6 @@ export const dbMiddleware = () =>
 
 // Helper to get DB from anywhere
 export const db = () => {
-  const context = getContext<{ Bindings: Bindings; Variables: Variables }>();
+  const context = getContext<Env>();
   return context.var.db;
 };

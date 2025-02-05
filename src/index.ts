@@ -4,9 +4,10 @@ import { cors } from "hono/cors";
 import { secureHeaders } from "hono/secure-headers";
 import { dbMiddleware } from "./middleware/db.middleware";
 import emailRouter from "./routes/email.route";
-import type { Bindings, ErrorResponse, Variables } from "./types";
+import type { ErrorResponse } from "./types";
 
-const app = new Hono<{ Bindings: Bindings; Variables: Variables }>();
+const app = new Hono();
+const v1 = new Hono();
 
 // Apply middleware globally
 app.use(contextStorage());
@@ -19,8 +20,11 @@ app.get("/", (c) => {
   return c.text("Healthy");
 });
 
-// Email routes
-app.route("/emails", emailRouter);
+// V1 Routes
+v1.route("/emails", emailRouter); // Email v1
+
+// Bootstrap versioned routers
+app.route("/api/v1", v1);
 
 // Error handler
 app.onError(async (error, c) => {
