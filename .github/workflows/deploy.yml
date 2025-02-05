@@ -30,8 +30,8 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           environment: prod
-          command: d1 migrations apply d1-email-list-prod
           wranglerVersion: 3.107.3
+          command: d1 migrations apply d1-email-list-prod
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3

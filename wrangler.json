@@ -28,7 +28,7 @@
         {
           "binding": "DB",
           "database_name": "d1-email-list-prod",
-          "database_id": "d45d7a86-7157-4402-9756-684456ec7693",
+          "database_id": "ec0b4a2d-f1ee-4829-992d-b3d7341b506d",
           "migrations_dir": "drizzle"
         }
       ],
