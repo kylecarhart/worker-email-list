@@ -17,18 +17,18 @@ jobs:
         with:
           version: 10
 
-      - name: Who am I
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: whoami
+      # - name: Who am I
+      #   uses: cloudflare/wrangler-action@v3
+      #   with:
+      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #     command: whoami
 
-      - name: Migrate Database
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          environment: prod
-          command: d1 migrations apply d1-email-list-prod
+      # - name: Migrate Database
+      #   uses: cloudflare/wrangler-action@v3
+      #   with:
+      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #     environment: prod
+      #     command: d1 migrations apply d1-email-list-prod
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
