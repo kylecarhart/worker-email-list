@@ -21,14 +21,16 @@ jobs:
       #   uses: cloudflare/wrangler-action@v3
       #   with:
       #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       #     command: whoami
 
-      # - name: Migrate Database
-      #   uses: cloudflare/wrangler-action@v3
-      #   with:
-      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      #     environment: prod
-      #     command: d1 migrations apply d1-email-list-prod
+      - name: Migrate Database
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          environment: prod
+          command: d1 migrations apply d1-email-list-prod
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
