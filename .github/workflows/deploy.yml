@@ -35,4 +35,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           environment: prod
+          preCommands: pwd; ls -la
           packageManager: pnpm
