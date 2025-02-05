@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "worker-email-list",
+  "name": "prod-worker-email-list",
   "main": "src/index.ts",
   "compatibility_date": "2025-02-03",
   "d1_databases": [
