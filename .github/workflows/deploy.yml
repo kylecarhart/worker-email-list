@@ -31,7 +31,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           environment: prod
           wranglerVersion: 3.107.3
-          command: d1 migrations apply d1-email-list-prod
+          command: d1 migrations apply d1-email-list-prod --remote
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
