@@ -16,6 +16,7 @@ export type Bindings = {
   RATE_LIMITER: {
     limit: (options: { key: string }) => Promise<{ success: boolean }>;
   };
+  ENVIRONMENT: "dev" | "prod";
 };
 
 export type Variables = {
