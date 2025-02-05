@@ -5,7 +5,7 @@
     "deploy": "wrangler deploy --minify",
     "db:generate": "drizzle-kit generate",
     "db:migrate-dev": "npx wrangler d1 migrations apply d1-email-list --local",
-    "db:migrate-prod": "npx wrangler d1 migrations apply d1-email-list-prod --remote --env prod"
+    "db:migrate-prod": "npx wrangler d1 migrations apply d1-email-list-prod --env prod"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.4.2",
