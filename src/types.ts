@@ -13,6 +13,9 @@ declare global {
 
 export type Bindings = {
   DB: D1Database;
+  RATE_LIMITER: {
+    limit: (options: { key: string }) => Promise<{ success: boolean }>;
+  };
 };
 
 export type Variables = {
