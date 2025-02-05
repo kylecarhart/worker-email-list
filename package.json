@@ -1,5 +1,6 @@
 {
   "name": "worker-email-list",
+  "main": "src/index.ts",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
