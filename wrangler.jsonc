@@ -11,6 +11,7 @@
     {
       "binding": "DB",
       "database_name": "dev-email-list",
+      "database_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "migrations_dir": "drizzle"
     }
   ],
